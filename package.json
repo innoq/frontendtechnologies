@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node -r dotenv/config bin/frontendtechnologi.es.js",
-    "dev:generate-self-signed-certs": "mkdir certs; openssl req -nodes -new -x509 -keyout certs/server.key -out certs/server.cert"
+    "start": "node -r dotenv/config bin/frontendtechnologi.es.js"
   },
   "author": "Falk Hoppe <falkhoppe81@gmail.com>",
   "license": "MIT",
