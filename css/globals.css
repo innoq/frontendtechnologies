@@ -1,0 +1,40 @@
+main {
+  padding: 3rem;
+}
+
+strong {
+  font-weight: 400;
+  font-family: FFMarkWebProBold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+ol.definition {
+  list-style-type: none;
+  counter-reset: def-counter;
+}
+
+ol.definition li {
+  counter-increment: def-counter;
+  position: relative;
+  margin-bottom: 0.75em;
+  font-style: italic;
+  font-size: 85%;
+}
+
+ol.definition li:before {
+  content: counter(def-counter);
+  position: absolute;
+  top: 0em;
+  left: -1em;
+}
+
+.pink {
+  color: pink;
+}
+
+.transclusion-label {
+  background-color: #ff4d67;
+}
+
+.microfrontend-label {
+  background-color: #55cdaf;
+}

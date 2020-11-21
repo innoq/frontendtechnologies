@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Frontend Technologies
+    link(rel="stylesheet", href="/css/innoq-bootstrap-theme.css")
+    link(rel="stylesheet", href="/css/globals.css")
+    link(rel="stylesheet", href="/css/colors.css")
+    link(rel="stylesheet", href="/css/topic-range.css")
+    link(rel="stylesheet", href="/css/app.css")
+
+  body
+    main
+      h1 Frontend Technologies
+      ft-topic-range(label-low="(lose)" label-high="(strong)")
+        ft-topic-range-label Coupling
+
+        ul
+          li.range-item
+
+            span No Integration (Decoupled Standalone Applications)
+          li.range-item
+            span Integration via Links or Forms (&lt;a&gt; or &lt;form&gt;) with Page Change included
+          li.range-item.group-1-offset
+            span Integration via SSI / ESI
+          li.range-item.group-1-offset
+            span Integration via iFrames (&lt;iframe&gt;)
+          li.range-item.group-1-offset
+            span Integration via Clientside Includes (Content-Retrieval as HTML by JS)
+          li.range-item.group-2-offset
+            span
+              strong Integration via Clientside Include
+              sup 1
+              = " "
+              | Content-Retrieval as structured Data (e.g. JSON) and render inside of Client Application by JS
+          li.range-item.group-2-offset
+            span
+              strong Singepage Framework
+              sup 2
+              = " "
+              | loading complete Modules from other Systems including Rendering Logic
+          li.range-item
+            span
+              strong Singepage Framework
+              sup 2
+              = " "
+              | composing all Backend Resources in one Frontend
+          //- TODO: bad hack ... but ft-range group needs to be in the ul because of grid :/
+          li.ft-range-group.group-1.transclusion-label
+            span transclusion
+          li.ft-range-group.group-2.microfrontend-label
+            span microfrontends
+
+      ol.definition
+        li without Client-Side routing
+        li SPA in the means of a JS heavy framework with (!!) Client-side Routing

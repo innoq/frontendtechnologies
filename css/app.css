@@ -1,0 +1,19 @@
+@media screen and (min-width: 1024px) {
+  .ft-range-group.transclusion-label {
+    grid-column: 3 / span 5;
+  }
+
+  .ft-range-group.microfrontend-label {
+    grid-column: 6 / span 2;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .ft-range-group.transclusion-label {
+    grid-row: 3 / span 5;
+  }
+
+  .ft-range-group.microfrontend-label {
+    grid-row: 6 / span 2;
+  }
+}
