@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "precompile": "cp node_modules/innoq-bootstrap-theme/dist/css/0.1.1/innoq-bootstrap-theme.css _site/css/innoq-bootstrap-theme.css",
+    "compile": "eleventy --formats=pug,css",
+    "start": "npm run compile -- --serve"
   },
   "author": "Falk Hoppe <falkhoppe81@gmail.com>",
   "license": "MIT",
-  "bin": {
-    "frontendtechnologi.es": "bin/frontendtechnologi.es.js"
-  },
   "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
     "eslint": "^7.13.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
@@ -20,5 +20,7 @@
     "eslint-plugin-standard": "^4.1.0"
   },
   "type": "module",
-  "module": "index.js"
+  "dependencies": {
+    "innoq-bootstrap-theme": "^0.1.0"
+  }
 }
