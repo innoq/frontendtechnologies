@@ -12,22 +12,44 @@ html(lang="en")
 
   body
     main
-      h1 Frontend Technologies
+      h1 Frontend Technologies Integration Guide
       ft-topic-range(label-low="(lose)" label-high="(strong)")
         ft-topic-range-label Coupling
 
         ul
           li.range-item
-
-            span No Integration (Decoupled Standalone Applications)
+            span
+              strong No Integration
+              = " "
+              | (Decoupled Standalone Applications, with no knowledge about eachother)
           li.range-item
-            span Integration via Links or Forms (&lt;a&gt; or &lt;form&gt;) with Page Change included
+            span
+              strong Integration via Links or Forms
+              = " ("
+              a(href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a") &lt;a&gt;
+              = " or "
+              a(href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form") &lt;form&gt;
+              = ") with Page Change included"
           li.range-item.group-1-offset
-            span Integration via SSI / ESI
+            span
+              strong Integration via iFrames
+              = " ("
+              a(href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe") &lt;iframe&gt;
+              = ")"
           li.range-item.group-1-offset
-            span Integration via iFrames (&lt;iframe&gt;)
+            span
+              strong Integration via
+                = " "
+                a(href="https://httpd.apache.org/docs/current/howto/ssi.html#:~:text=SSI%20(Server%20Side%20Includes)%20are,program%2C%20or%20other%20dynamic%20technology.") SSI
+                = " / "
+                a(href="https://www.w3.org/TR/esi-lang/") ESI
           li.range-item.group-1-offset
-            span Integration via Clientside Includes (Content-Retrieval as HTML by JS)
+            span
+              strong Integration via Clientside Includes
+              = " "
+              = "(Content-Retrieval as HTML by JS, see e.g. "
+              a(href="https://roca-style.org/libraries.html") ROCA
+              =")"
           li.range-item.group-2-offset
             span
               strong Integration via Clientside Include

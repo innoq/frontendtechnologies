@@ -9,6 +9,10 @@ ft-topic-range {
   margin-bottom: 3rem;
 }
 
+ft-topic-range strong {
+  display: block;
+}
+
 ft-topic-range ul,
 ft-topic-range li {
   padding: 0;
