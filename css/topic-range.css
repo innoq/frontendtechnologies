@@ -157,7 +157,7 @@ ft-topic-range:after {
 
     position: absolute;
     padding-left: 1rem;
-    width: 45rem;
+    width: 40rem;
     transform-origin: 0 0;
     transform: rotate(-90deg);
   }
