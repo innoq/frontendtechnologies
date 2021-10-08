@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "precompile": "cp node_modules/innoq-bootstrap-theme/dist/css/1.0.1/innoq-bootstrap-theme.css _site/css/innoq-bootstrap-theme.css",
+    "cleanup": "rm -rf _site && mkdir -p _site/css",
+    "provide-theme": "cp node_modules/innoq-bootstrap-theme/dist/css/1.0.1/innoq-bootstrap-theme.css _site/css/innoq-bootstrap-theme.css",
+    "precompile": "npm run cleanup && npm run provide-theme",
     "compile": "eleventy --formats=pug,css",
     "start": "npm run compile -- --serve"
   },
