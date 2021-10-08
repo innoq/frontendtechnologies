@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "precompile": "cp node_modules/innoq-bootstrap-theme/dist/css/0.1.1/innoq-bootstrap-theme.css _site/css/innoq-bootstrap-theme.css",
+    "precompile": "cp node_modules/innoq-bootstrap-theme/dist/css/1.0.1/innoq-bootstrap-theme.css _site/css/innoq-bootstrap-theme.css",
     "compile": "eleventy --formats=pug,css",
     "start": "npm run compile -- --serve"
   },
@@ -21,6 +21,6 @@
   },
   "type": "module",
   "dependencies": {
-    "innoq-bootstrap-theme": "^0.1.0"
+    "innoq-bootstrap-theme": "^1.0.1"
   }
 }
