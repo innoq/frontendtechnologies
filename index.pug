@@ -12,11 +12,40 @@ html(lang="en")
 
   body
     main
-      h1 Frontend Technologies Integration Guide
+      h1 Frontend Technologies Integration Guide for Web-based Services
 
       p.
         Modern web-based digital solutions nowadays consist often of a multitude of services that build up together what
-        we think is the final product.
+        we think is the final product. To re-integrate such services into a seemless product experience can be a complex task
+        with a multitude of different possibilities on how to achieve that goal.
+
+      p.
+        The range of different integration techniques starts with simple linking or form interactions between different applications,
+        goes over injecting content parts of other services in the content of another service, so called transclusion,
+        to completly integrating various API resources into a monolithic Frontend-Application, often referred to as Single Page Applications.
+
+      h2 Integration Techniques and Coupling
+
+      p.
+        Beside advantages like higher flexibility and therefore better adaptability to a users needs Web-based user interfaces
+        provide many advantages build in into the HTTP protocol. One of those, and a huge part of the success of REST based applications
+        is the lose coupling between services. Lose coupling in terms of robustness against outages of related services,
+        but also in terms of flexible formats like HTML or JSON, that are commonly used and that are easily extendible.
+
+      p.
+        In terms of coupling the HTML format had a big advantage for the integration as the integrating client does not need
+        to know about the semantic structure of the content. Clients could just integrate the content into their HTML pages
+        and rely on the Document Object Model or DOM to build up a seemless web experience. Think of iFrames and similar and
+        how they do not know anything about the internals of what they contain.
+
+      p.
+        In contrast to that many client-side integration techniques rely on JSON as exchange format to tunnel data to the client.
+        The JSON then can be used for the control flow of the client, but also for filling client-side templates to render HTML content.
+        This rendering though relies on the knowledge of the structure of the transfered data and has therefore a stronger coupling
+        than its is simpler cousin of HTML transcludes.
+
+      p.
+        In many modern frontend frameworks this robustness
 
       ft-topic-range(label-low="(lose)" label-high="(strong)")
         ft-topic-range-label Coupling
@@ -87,3 +116,4 @@ html(lang="en")
       ol.definition
         li without Client-Side routing
         li SPA in the means of a JS heavy framework with (!!) Client-side Routing
+
