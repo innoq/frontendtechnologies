@@ -7,6 +7,10 @@ strong {
   font-family: FFMarkWebProBold, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+li {
+  list-style-type: none;
+}
+
 ol.definition {
   list-style-type: none;
   counter-reset: def-counter;
@@ -28,7 +32,7 @@ ol.definition li:before {
 }
 
 .transclusion-label {
-  background-color: #ff9c66;
+  background-color: var(--highlight);
 }
 
 .microfrontend-label {

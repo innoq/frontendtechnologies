@@ -17,3 +17,53 @@
     grid-row: 7 / span 2;
   }
 }
+
+footer {
+  background-color: #004153;
+  padding: 3rem 3rem;
+  color: #fff;
+}
+
+footer a:link, footer a:visited, footer a:hover, footer a:active {
+  color: #fff;
+}
+
+.footer-logo {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.about-us h3, .social h3 {
+  font-size: 1.5rem;
+  color: var(--highlight)
+}
+
+.social-links li {
+  display: inline-block;
+}
+
+.innoq-logo {
+  margin-left: 3rem;
+}
+.innoq-logo img {
+  width: 150px;
+  background-color: #3115d3;
+  box-shadow: 5px 6px 0 0 #ff9698;
+}
+
+
+@media screen and (min-width: 1024px) {
+  footer {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    padding: 3rem 10rem;
+  }
+
+  .about-us {
+    grid-column: 1;
+  }
+
+  .social {
+    grid-column: 2;
+  }
+}
