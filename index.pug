@@ -194,12 +194,40 @@ html(lang="en")
               | composing all Backend Resources in one Frontend
           //- TODO: bad hack ... but ft-range group needs to be in the ul because of grid :/
           li.ft-range-group.group-1.transclusion-label
-            span transclusion
+            span
+              sup 3
+              | transclusion
           li.ft-range-group.group-2.microfrontend-label
-            span microfrontends
+            span
+              sup 4
+              | microfrontends
 
       ol.definition
         li without Client-Side routing
         li SPA in the means of a JS heavy framework with (!!) Client-side Routing
+        li Transclusion means the loading and injection of content where the rendering-logic is in the responsibility of the originating system. The definition is somewhat of a grey area though.
+        li Microfrontends exists in multiple definitions but conceptually it's about the composition/inclusion of bigger standalone components, vs. a controlling JS framework, that takesover the composition of components.
+
+      h2 Summary
+
+      p The information provided above should provide an unoppiniated (is that even possible for us programming people?) overview about the different integration options we have. The choice you actually make is heavily depending on the UseCase you try to establish.
+
+      p My personaly flavour is usually to start more on the left side on the coupling diagram and move over to the right, step by step, with additional requirements justifying more build-stack and framework complexity. With the help of the different integration points the infrastructure setup provides I try to find a good mix between complexity and maintainence friendliness.
+
+      p If you find yourself in a project implementing something like Microsoft Excel in the Brower, go straight to the right side of the diagram, because that is an excellent UseCase where you want coupling, or better said you want semantical knowledge about the State of the client-content you integrate, so that you can use it in the client without interference with the server.
+
+      p For a multitude of UseCases such requirements don't really exist and Offline Capabilities are not necessary. Therefore I have the tendency to start on the left side and in case I have a business component that has such requirements to add such complexity iteratively and scoped to that component. A Microfrontend approach is a good next step to address such requirements.
+
+      p I hope the described observations and patterns help you to make an informed decision when you are in the position to design the frontend integration for your next project.
+
+      h2 Related Links
+
+      ul
+        li
+          a(href="https://scs-architecture.org/") Self-Contained Systems
+        li
+          a(href="https://www.innoq.com/en/blog/good-arguments-for-spa/") Good Arguments for SPAs
+        li
+          a(href="https://martinfowler.com/articles/micro-frontends.html") Micro Frontends (Cam Jackson)
 
     include includes/footer
