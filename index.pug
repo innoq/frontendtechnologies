@@ -10,6 +10,9 @@ html(lang="en")
     link(rel="stylesheet", href="/css/topic-range.css")
     link(rel="stylesheet", href="/css/app.css")
 
+    - const updated = new Date().toUTCString()
+    meta(http-equiv="last-modified" content=updated)
+
   body
     a.innoq-logo(href="https://innoq.com")
       img(src="https://assets.website-files.com/5ce672a39e1ab48163e902a5/5cead0e15abdf65af550f85f_innoq-logo--neg.svg", alt="INNOQ")
@@ -229,5 +232,10 @@ html(lang="en")
           a(href="https://www.innoq.com/en/blog/good-arguments-for-spa/") Good Arguments for SPAs
         li
           a(href="https://martinfowler.com/articles/micro-frontends.html") Micro Frontends (Cam Jackson)
+
+      p
+        | Last Modified:
+        = " "
+        = updated
 
     include includes/footer
