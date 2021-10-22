@@ -1,0 +1,79 @@
+main {
+  padding: 3rem;
+}
+
+
+@media screen and (min-width: 1024px) {
+  main {
+    padding: 3rem 10%;
+  }
+}
+
+@media screen and (min-width: 2200px) {
+  main {
+    padding: 3rem 20%;
+  }
+}
+
+
+strong {
+  font-weight: 400;
+  font-family: FFMarkWebProBold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+li {
+  list-style-type: none;
+}
+
+ol.definition {
+  list-style-type: none;
+  counter-reset: def-counter;
+}
+
+ol.definition li {
+  counter-increment: def-counter;
+  position: relative;
+  margin-bottom: 0.75em;
+  font-style: italic;
+  font-size: 85%;
+}
+
+ol.definition li:before {
+  content: counter(def-counter);
+  position: absolute;
+  top: 0em;
+  left: -1em;
+}
+
+.transclusion-label {
+  background-color: var(--highlight);
+}
+
+.microfrontend-label {
+  background-color: var(--fresh);
+}
+
+main h1 {
+  margin-bottom: 3rem;
+}
+
+main h2 {
+  margin-top: 5rem;
+  margin-bottom: 2.5rem;
+  color: var(--classic);
+}
+
+main h3 {
+  margin-top: 3rem;
+  color: var(--highlight);
+}
+
+main h4 {
+  color: var(--fresh-text);
+  font-size: 1.5rem;
+}
+
+main p {
+  margin-bottom: 2.5rem;
+  line-height: 1.8 !important;
+}

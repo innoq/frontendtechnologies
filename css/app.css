@@ -1,0 +1,97 @@
+body {
+  padding-top: 7rem;
+}
+
+
+
+@media screen and (min-width: 1024px) {
+  .ft-range-group.transclusion-label {
+    grid-column: 3 / span 6;
+  }
+
+  .ft-range-group.microfrontend-label {
+    grid-column: 7 / span 2;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .ft-range-group.transclusion-label {
+    grid-row: 3 / span 6;
+  }
+
+  .ft-range-group.microfrontend-label {
+    grid-row: 7 / span 2;
+  }
+}
+
+footer {
+  background-color: var(--classic);
+  padding: 3rem 3rem;
+  color: #fff;
+}
+
+footer a:link, footer a:visited, footer a:hover, footer a:active {
+  color: #fff;
+}
+
+.footer-logo {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.about-us h3, .social h3 {
+  font-size: 1.5rem;
+  color: var(--highlight)
+}
+
+.social-links li {
+  display: inline-block;
+}
+
+.innoq-logo {
+  position: absolute;
+  top: 2rem;
+  left: 3rem;
+}
+.innoq-logo img {
+  width: 180px;
+  background-color: var(--classic);
+  box-shadow: 5px 6px 0 0 #ff9698;
+  background-position: 50% 50%;
+  padding: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  footer {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    padding: 3rem 10rem;
+  }
+
+  .about-us {
+    grid-column: 1;
+  }
+
+  .social {
+    grid-column: 2;
+  }
+}
+
+figure {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+figure img {
+  max-width: 100%;
+}
+
+figcaption {
+  font-style: italic;
+  margin-top: 1rem;
+  display: block;
+}
