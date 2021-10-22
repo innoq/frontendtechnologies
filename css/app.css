@@ -56,7 +56,7 @@ footer a:link, footer a:visited, footer a:hover, footer a:active {
 .innoq-logo img {
   width: 180px;
   background-color: var(--classic);
-  box-shadow: 5px 6px 0 0 #ff9698;
+  box-shadow: 5px 6px 0 0 var(--highlight);
   background-position: 50% 50%;
   padding: 1rem;
 }
