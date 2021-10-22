@@ -1,3 +1,9 @@
+body {
+  padding-top: 7rem;
+}
+
+
+
 @media screen and (min-width: 1024px) {
   .ft-range-group.transclusion-label {
     grid-column: 3 / span 6;
@@ -19,7 +25,7 @@
 }
 
 footer {
-  background-color: #004153;
+  background-color: var(--classic);
   padding: 3rem 3rem;
   color: #fff;
 }
@@ -43,14 +49,17 @@ footer a:link, footer a:visited, footer a:hover, footer a:active {
 }
 
 .innoq-logo {
-  margin-left: 3rem;
+  position: absolute;
+  top: 2rem;
+  left: 3rem;
 }
 .innoq-logo img {
-  width: 150px;
-  background-color: #3115d3;
+  width: 180px;
+  background-color: var(--classic);
   box-shadow: 5px 6px 0 0 #ff9698;
+  background-position: 50% 50%;
+  padding: 1rem;
 }
-
 
 @media screen and (min-width: 1024px) {
   footer {
@@ -66,4 +75,23 @@ footer a:link, footer a:visited, footer a:hover, footer a:active {
   .social {
     grid-column: 2;
   }
+}
+
+figure {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+figure img {
+  max-width: 100%;
+}
+
+figcaption {
+  font-style: italic;
+  margin-top: 1rem;
+  display: block;
 }

@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cleanup": "rm -rf _site && mkdir -p _site/css",
+    "cleanup": "rm -rf _site && mkdir -p _site/css && mkdir -p _site/images",
     "provide-theme": "cp node_modules/innoq-bootstrap-theme/dist/css/1.0.1/innoq-bootstrap-theme.css _site/css/innoq-bootstrap-theme.css",
-    "precompile": "npm run cleanup && npm run provide-theme",
+    "provide-images": "cp -r images/* _site/images/.",
+    "precompile": "npm run cleanup && npm run provide-theme && npm run provide-images",
     "compile": "eleventy --formats=pug,css",
     "start": "npm run compile -- --serve"
   },

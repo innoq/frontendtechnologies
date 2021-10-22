@@ -2,6 +2,20 @@ main {
   padding: 3rem;
 }
 
+
+@media screen and (min-width: 1024px) {
+  main {
+    padding: 3rem 10%;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  main {
+    padding: 3rem 20%;
+  }
+}
+
+
 strong {
   font-weight: 400;
   font-family: FFMarkWebProBold, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -36,5 +50,30 @@ ol.definition li:before {
 }
 
 .microfrontend-label {
-  background-color: #68ddc3;
+  background-color: var(--fresh);
+}
+
+main h1 {
+  margin-bottom: 3rem;
+}
+
+main h2 {
+  margin-top: 5rem;
+  margin-bottom: 2.5rem;
+  color: var(--classic);
+}
+
+main h3 {
+  margin-top: 3rem;
+  color: var(--highlight);
+}
+
+main h4 {
+  color: var(--fresh-text);
+  font-size: 1.5rem;
+}
+
+main p {
+  margin-bottom: 2.5rem;
+  line-height: 1.8 !important;
 }
