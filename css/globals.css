@@ -77,3 +77,7 @@ main p {
   margin-bottom: 2.5rem;
   line-height: 1.8 !important;
 }
+
+.hint {
+  font-style: italic;
+}
