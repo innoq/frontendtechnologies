@@ -30,6 +30,9 @@ html(lang="en")
         goes over injecting content parts of other services in the content of another service, so called transclusion,
         to completly integrating various API resources into a monolithic Frontend-Application, often referred to as Single Page Applications.
 
+      p.hint.
+        This page tries to give a good overview to start or support a discussion in your projects about front-end integration and is by no means an exhaustive list of integration techniques.
+
       p.
         Before we talk about which integration technique is the one you are looking for it makes sense to have a look on where or maybe better
         when we can intercept a web request and integrate some content. So what are the options that we have?
@@ -65,8 +68,7 @@ html(lang="en")
       h4 Application-Side Integration
 
       p
-        | When a request headed down the stream to it's end it usually hits our application. The shown stack can also be implemented in a variety of different ways, but conceptually it hit's our custom business code. In here we could do some integration work.
-        If it is some pre-aggregation from raw data that we put in an application cache or if we load some pre-rendered HTML from a different service and render that as is in our templates does not really make a difference. At this point we are relatively free to cache the integrated content and deliver it back to the next upstream in our journey. If the resource is private or public does not matter that much for application-side caching (yes, except the
+        | When a request headed down the stream to it's end it usually hits our application. The shown stack can also be implemented in a variety of different ways, but conceptually it hit's our custom business code. In here we could do some integration work. If it is some pre-aggregation from raw data that we put in an application cache or if we load some pre-rendered HTML from a different service and render that as is in our templates does not really make a difference. At this point we are relatively free to cache the integrated content and deliver it back to the next upstream in our journey. If the resource is private or public does not matter that much for application-side caching (yes, except the
         = " "
         a(href="https://martinfowler.com/bliki/TwoHardThings.html" target="_blank" rel="noopener") inherent complexity of caching
         = " "
