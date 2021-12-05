@@ -42,7 +42,7 @@ html(lang="en")
       h3 Don't Integrate!
 
       p.
-        Our first and sometimes not obvious strategy is the "No strategy at all". Instead of referencing content from a different service and use some code or infrastructure to integrate that, maybe take a step back and think about a simpler approach. Copy&amp;Paste might be all you need. For many, many Use Cases it is much more sufficient and robust to not integrate at all, but rely on redundancy. For a shared main navigation for example that changes only once every few months or even years a run-time integration seems way to complicated in comparison. For small HTML snippets that change very seldom this might be a valid approach.
+        Our first and sometimes not obvious strategy is the "No strategy at all". Instead of referencing content from a different service and use some code or infrastructure to integrate that, maybe take a step back and think about a simpler approach. Copy&amp;Paste might be all you need. For many, many use cases it is much more sufficient and robust to not integrate at all, but rely on redundancy. For a shared main navigation for example that changes only once every few months or even years a run-time integration seems way to complicated in comparison. For small HTML snippets that change very seldom this might be a valid approach.
 
       h3 Integrate at Build-time
 
@@ -50,7 +50,7 @@ html(lang="en")
         For many content snippets that are larger in size but change very rarely as similar as mentioned before a Copy&amp;Paste approach
         becomes unmaintainable very fast. Instead it might make sense to integrate the content in a more static way at build time.
         Let's take now a classical HTML Footer element of a web-service. It is usually way more code than in a simple main navigation.
-        Such a snippet can be packaged for example in a `npm` package, or similar, and installed and referenced in your application builds.
+        Such a snippet can be packaged for example in a `npm` package, or similar, and be installed and referenced in your application builds.
 
       p The disadvantage of both cases is that an update of such a code snippet needs a code update, a rebuild, or at least a restart of the application. To avoid this downside most integrations happen at Run-time. Let's have a look into that now.
 
@@ -58,7 +58,7 @@ html(lang="en")
 
       p.
         So what are the integration points we can chose from? Let's imagine a request to an HTTP resource and an HTML content snippet,
-        that we want to have in our page from a different service. The infrastructure shown in the diagram below is just a schematic example and usually a system has not all the options implemented therefore it is more an overview of viable options.
+        that we want to have in our page from a different service. The infrastructure shown in the diagram below is just a schematic example and usually a system has not all the options implemented, therefore it is more an overview of viable options.
 
 
       figure
@@ -68,11 +68,11 @@ html(lang="en")
       h4 Application-Side Integration
 
       p
-        | When a request headed down the stream to it's end it usually hits our application. The shown stack can also be implemented in a variety of different ways, but conceptually it hit's our custom business code. In here we could do some integration work. If it is some pre-aggregation from raw data that we put in an application cache or if we load some pre-rendered HTML from a different service and render that as is in our templates does not really make a difference. At this point we are relatively free to cache the integrated content and deliver it back to the next upstream in our journey. If the resource is private or public does not matter that much for application-side caching (yes, except the
+        | When a request headed down the stream to its end it usually hits our application. The shown stack can also be implemented in a variety of different ways, but conceptually it hits our custom business code. In here we could do some integration work. If it is some pre-aggregation from raw data that we put in an application cache or if we load some pre-rendered HTML from a different service and render that as is in our templates does not really make a difference. At this point we are relatively free to cache the integrated content and deliver it back to the next upstream in our journey. If the resource is private or public does not matter that much for application-side caching (yes, except the
         = " "
         a(href="https://martinfowler.com/bliki/TwoHardThings.html" target="_blank" rel="noopener") inherent complexity of caching
         = " "
-        | ;-)) as we have usually all the information at hand about a users authentication state.
+        | ;-)) as we usually have all the information at hand about a user's authentication state.
 
       h4 Server-Side Includes (SSI)
 
@@ -99,17 +99,17 @@ html(lang="en")
 
       p.
         Client-side Integration happens at User-land. It is the concept of loading content via Javascript, either as a block of HTML that is injected in the main content as is or as structured data, parsed, evaluated, rendered, and injected by the client itself.
-        Client-side Integration comes in many forms and colors, minimal approaches or as part of big Frameworks. Beside the difference that those different flavours have, the approach itself has some characteristics.
+        Client-side Integration comes in many forms and colors, minimal approaches or as part of big frameworks. Beside the difference that those different flavours have, the approach itself has some characteristics.
 
       p.
-        As the loading of the content happens at User-land we don't really have to think twice (hopefully you do anyway!) about the public or private nature of the resources we combine. Here everything is allowed as we write our own rules and have a full client at hand that can be used to bend the rules. What is a good practice and what not is part of a different discussion, but basically that is a major difference to the integration capabilities provided by server-side techniques.
+        As the loading of the content happens at User-land we don't really have to think twice (hopefully you do anyway!) about the public or private nature of the resources we combine. Here everything is allowed as we write our own rules and have a full client at hand that can be used to bend the rules. What is a good practice and what is not is part of a different discussion, but basically that is a major difference to the integration capabilities provided by server-side techniques.
 
       p.
         But as the integration on User-side has this big advantage, why shouldn't we only use that technique then to integrate all our content? Basically that is a very complex question, but what we do essentially is, to let every user make the integration of our content over and over again. And while that is absolutely justified for certain content and resources that is a huge waste of computational time, energy (think of all the Cryptos you could have mined with bad implemented client-side integration), and a big layer of additional complexity when that is the single hammer you have to solve all integration problems.
         Especially for publicly cacheable resources it provides to be highly efficient to integrate content once for all of the user base.
 
       p.
-        Another big problem that is often not discussed is that it is very hard to debug integration errors when they happen on a machine not under the control of your platform. While there are some approaches for end-user monitoring and shipping JS errors back to the server-side to make them available to your error analysis, those approaches are very complex and often lossy and error prone themselves. As server-side integration happens in your area of responsibility and can be monitored with any standard server monitoring utility a server-driven integration can make some UseCases much, much easier.
+        Another big problem that is often not discussed is that it is very hard to debug integration errors when they happen on a machine not under the control of your platform. While there are some approaches for end-user monitoring and shipping JS errors back to the server-side to make them available to your error analysis, those approaches are very complex and often lossy and error prone themselves. As server-side integration happens in your area of responsibility and can be monitored with any standard server monitoring utility a server-driven integration can make some use cases much, much easier.
 
       p What was not explicitly mentioned before is that the Service Worker toolstack is part of the Client-side integration block. While it is an awesome addition to the client-side world, we skip that out of our evaluation here, because it is more of an improvement in regards to the client-side integration.
 
@@ -117,7 +117,7 @@ html(lang="en")
       h2 Integration Techniques and Coupling
 
       p.
-        Beside advantages like higher flexibility and therefore better adaptability to a users needs web-based user interfaces
+        Beside advantages like higher flexibility and therefore better adaptability to a user's needs web-based user interfaces
         provide many advantages built-in right into the HTTP protocol. One of those, and a huge part of the success of REST based applications
         is the loose coupling between services. Loose coupling in terms of robustness against outages of related services,
         but also in terms of flexible formats like HTML or JSON, that are commonly used and that are easily extensible.
@@ -125,7 +125,7 @@ html(lang="en")
       p.
         In terms of coupling the HTML format has a big advantage for the integration as the integrating client does not need
         to know about the semantic structure of the content. Clients could just integrate the content into their HTML pages
-        and rely on the Document Object Model or DOM to build up a seamless web experience. Think of iFrames and similar and
+        and rely on the Document Object Model or DOM to build up a seamless web experience. Think of iframes and similar and
         how they do not know anything about the internals of what they contain.
 
       p.
@@ -136,7 +136,7 @@ html(lang="en")
 
       p.
         Depending on the requirements a stronger coupling can be justified and apps and frameworks that have an architecture that leads
-        to a stronger coupling are not necessarily bad. Which framework or integration strategy is the best depends heavily on the given Use Case.
+        to a stronger coupling are not necessarily bad. Which framework or integration strategy is the best depends heavily on the given use case.
 
       ft-topic-range(label-low="(lose)" label-high="(strong)")
         ft-topic-range-label Coupling
@@ -146,10 +146,10 @@ html(lang="en")
             span
               strong No Integration
               = " "
-              | (Decoupled Standalone Applications, with no knowledge about eachother)
+              | (Decoupled Standalone Applications, with no knowledge about each other)
           li.range-item
             span
-              strong Integration via Links or Forms
+              strong Integration via links or forms
               = " ("
               a(href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a") &lt;a&gt;
               = " or "
@@ -157,7 +157,7 @@ html(lang="en")
               = ") with Page Change included"
           li.range-item.group-1-offset
             span
-              strong Integration via iFrames
+              strong Integration via iframes
               = " ("
               a(href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe") &lt;iframe&gt;
               = ")"
@@ -188,13 +188,13 @@ html(lang="en")
               | Content-Retrieval as structured Data (e.g. JSON) and render inside of Client Application by JS
           li.range-item.group-2-offset
             span
-              strong Singlepage Framework
+              strong Single Page Framework
               sup 2
               = " "
               | loading self contained Modules from other Systems including Rendering Logic
           li.range-item
             span
-              strong Singlepage Framework
+              strong Single Page Framework
               sup 2
               = " "
               | composing all Backend Resources in one Frontend
@@ -216,13 +216,13 @@ html(lang="en")
 
       h2 Summary
 
-      p The information provided above should provide an unopinionated (is that even possible for us programming people?) overview about the different integration options we have. The choice you actually make is heavily depending on the UseCase you try to establish.
+      p The information provided above should provide an unopinionated (is that even possible for us programming people?) overview about the different integration options we have. The choice you actually make is heavily depending on the use case you try to establish.
 
-      p My personaly flavour is usually to start more on the left side on the coupling diagram and move over to the right, step by step, with additional requirements justifying more build-stack and framework complexity. With the help of the different integration points the infrastructure setup provides I try to find a good mix between complexity and maintainence friendliness.
+      p My personal flavour is usually to start more on the left side on the coupling diagram and move over to the right, step by step, with additional requirements justifying more build-stack and framework complexity. With the help of the different integration points the infrastructure setup provides I try to find a good mix between complexity and maintainence friendliness.
 
-      p If you find yourself in a project implementing something like Microsoft Excel in the Brower, go straight to the right side of the diagram, because that is an excellent UseCase where you want coupling, or better said you want semantical knowledge about the state of the client-content you integrate, so that you can use it in the client without interference with the server.
+      p If you find yourself in a project implementing something like Microsoft Excel in the Brower, go straight to the right side of the diagram, because that is an excellent use case where you want coupling, or better said you want semantical knowledge about the state of the client-content you integrate, so that you can use it in the client without interference with the server.
 
-      p For a multitude of UseCases such requirements don't really exist and offline capabilities are not necessary. Therefore I have the tendency to start on the left side and in case I have a business component that has such requirements to add such complexity iteratively and scoped to that component. A Microfrontend approach is a good next step to address such requirements.
+      p For a multitude of use cases such requirements don't really exist and offline capabilities are not necessary. Therefore I have the tendency to start on the left side and in case I have a business component that has such requirements to add such complexity iteratively and scoped to that component. A Microfrontend approach is a good next step to address such requirements.
 
       p I hope the described observations and patterns help you to make an informed decision when you are in the position to design the frontend integration for your next project.
 
